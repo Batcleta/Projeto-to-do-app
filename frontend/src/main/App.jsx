@@ -4,21 +4,19 @@ import 'font-awesome/css/font-awesome.min.css';
 // Dependencies
 import React from 'react';
 
-// Components
-import Menu from '../templates/menu'
-import Todo from '../todo/todo'
-import About from '../about/about'
+// components
+import Menu from '../templates/Menu';
+import Routes from './routes'
 
 const App = props => {
   return (
 
     <div className="App">
       <Menu />
-      <Todo />
-      <About />
+      <Routes /> 
     </div>
 
   )
-}
+};
 
 export default App;
