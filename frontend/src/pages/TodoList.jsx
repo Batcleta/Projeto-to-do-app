@@ -1,15 +1,18 @@
 import React from 'react';
+import {connect} from 'react-redux'
+
 import IconButton from "../templates/iconButton";
 
 const TodoList = props => {
 
     const renderRows = () => {
         const list = props.list || []
+        const {done} = props
 
         return list.map((data) => (
             <tr key={data._id}>
                 <td>{data.description}</td>
-                <td>{data.done === true ? <span>concluido</span>: <span>Pendente</span>}</td>
+                <td>{data.done === true ? <span> concluido </span> : <span> Pendente </span>}</td>
                 <td>
                     <IconButton style={'success'} icon={'check'}
                                 onclick={() => props.handleMarkAsDone(data)} hide={data.done}/>
@@ -27,15 +30,21 @@ const TodoList = props => {
     return (
         <table className={'table'}>
             <thead>
-                <tr>
-                    <th>Description</th>
-                </tr>
+            <tr>
+                <th>Description</th>
+            </tr>
             </thead>
             <tbody>
-                {renderRows()}
+            {renderRows()}
             </tbody>
         </table>
     )
 }
 
-export default TodoList;
+const mapStateToProps = state => {
+    return {
+        list: state.list.list
+    }
+}
+
+export default connect(mapStateToProps)(TodoList);

@@ -1,9 +1,7 @@
 import {DESC_ALTERADA} from '../actions/actionType'
-
 const initialState = {
-    description: 'esta descrição é um teste de atualização de estado com reduz'
+    description: ''
 }
-
 export default function (state = initialState, action) {
     switch (action.type) {
         case DESC_ALTERADA:

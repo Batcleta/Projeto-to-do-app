@@ -1,2 +1,3 @@
 export const DESC_ALTERADA = 'DESC_ALTERADA'
 export const LISTA_ATUALIZADA = 'LISTA_ATUALIZADA'
+export const IT_IS_DONE = 'IT_IS_DONE'

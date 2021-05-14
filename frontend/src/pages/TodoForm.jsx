@@ -3,11 +3,12 @@ import {connect} from 'react-redux'
 
 import Grid from '../templates/Grid';
 import IconButton from "../templates/iconButton";
+
 import {alterarDescrição} from "../store/actions/descriptionAction";
 
 const TodoForm = (props) => {
     const {description, alteradesc} = props;
-    ;
+    console.log(description)
 
     const keyHandler = e => {
         if (e.key === 'Enter') {
@@ -25,7 +26,7 @@ const TodoForm = (props) => {
                     className='form-control'
                     placeholder='Adicione uma tarefa'
                     value={description}
-                    onChange={e=> alteradesc(e.target.value)}
+                    onChange={e => alteradesc(e.target.value)}
                     onKeyUp={keyHandler}
                 />
             </Grid>
@@ -40,7 +41,7 @@ const TodoForm = (props) => {
 }
 
 const mapStateToProps = state => {
-    return {
+    return{
         description: state.description.description
     }
 }
