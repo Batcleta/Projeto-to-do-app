@@ -70,7 +70,7 @@ class Todo extends Component {
     render = _ => (
         <div>
             <PageHeader name={'Criação'} small={'Cadastro'}/>
-            <TodoForm description={this.state.description}
+            <TodoForm
                       HandleAdd={this.HandleAdd}
                       handleChange={this.handleChange}
                       handleSearch={this.handleSearch}
